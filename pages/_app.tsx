@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import { Layout } from '../lib/components'
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+const MyApp = ({
+  Component,
+  pageProps,
+}: AppProps): JSX.Element => {
   return (
     <>
       <Head>
@@ -13,8 +17,9 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           crossOrigin='anonymous'
         />
       </Head>
-
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }
